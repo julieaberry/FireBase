@@ -7,12 +7,35 @@
 //
 
 import UIKit
+//import FirebaseAuth
+import Firebase
 
 class ViewController: UIViewController {
-
+    
+    var postRef: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tmpEmail = "FireBaseUser2@mail.com"
+        
+        postRef = FIRDatabase.database().reference()
+        
+        FIRAuth.auth()?.createUser(withEmail: tmpEmail, password: "112233", completion: { (user, error) in
+            
+            if let error = error{
+             
+                print("\(error.localizedDescription)")
+            }else{
+                print("유저(이메일) 등록")
+                
+                let key = self.postRef.child("posts").childByAutoId().key
+                let post = ["uid": tmpEmail]
+                let childUpdates = ["/posts/\(key)": post]
+                self.postRef.updateChildValues(childUpdates)
+            }
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
