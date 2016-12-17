@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
         <!--User List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="UserListViewController" customModule="FireBaseStudy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UserListViewController" customModule="FireBaseStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,27 +37,44 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xwu-vI-0A2">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" id="hSu-wa-g6a">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hSu-wa-g6a" id="DVS-3Z-Szf">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FWv-ma-56K"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="exS-eb-lTc"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Xwu-vI-0A2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="1Kj-Zo-fLI"/>
                             <constraint firstAttribute="trailing" secondItem="Xwu-vI-0A2" secondAttribute="trailing" id="H9R-ii-Ctc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xwu-vI-0A2" secondAttribute="bottom" id="Mz3-rj-PBh"/>
                             <constraint firstItem="Xwu-vI-0A2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jvS-1i-WU8"/>
-                            <constraint firstItem="Xwu-vI-0A2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rGS-wB-MB2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MIM-oH-AqC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZdE-lE-ItK">
                             <connections>
-                                <action selector="actionAddView:" destination="BYZ-38-t0r" id="Jt4-AG-1Rt"/>
+                                <segue destination="uZX-Ac-Tds" kind="show" id="hpL-Jl-InT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userTableView" destination="Xwu-vI-0A2" id="1pQ-Zi-kp6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="121"/>
+            <point key="canvasLocation" x="165.59999999999999" y="120.98950524737631"/>
         </scene>
         <!--User Add View Controller-->
         <scene sceneID="cXs-6m-fnq">

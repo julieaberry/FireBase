@@ -9,22 +9,27 @@
 import UIKit
 import Firebase
 
-class UserListViewController: UIViewController {
+class UserListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var userTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        cell.backgroundColor = UIColor.green
+        
+        return cell
     }
     
 
-    @IBAction func actionAddView(_ sender: AnyObject) {
-        
-        let addView = self.storyboard?.instantiateViewController(withIdentifier: "UserAddViewController")
-        self.navigationController?.pushViewController(addView!, animated: true)
-    }
 }
