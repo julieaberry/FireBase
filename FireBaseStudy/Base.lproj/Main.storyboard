@@ -25,7 +25,7 @@
         <!--User List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="UserListViewController" customModule="FireBaseStudy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="UserListViewController" customModule="FireBaseStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" id="MIM-oH-AqC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZdE-lE-ItK">
                             <connections>
-                                <segue destination="uZX-Ac-Tds" kind="show" id="qgG-ti-lol"/>
+                                <action selector="actionAddView:" destination="BYZ-38-t0r" id="Jt4-AG-1Rt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -61,7 +61,7 @@
         <!--User Add View Controller-->
         <scene sceneID="cXs-6m-fnq">
             <objects>
-                <viewController id="uZX-Ac-Tds" customClass="UserAddViewController" customModule="FireBaseStudy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserAddViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uZX-Ac-Tds" customClass="UserAddViewController" customModule="FireBaseStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1GY-xJ-D96"/>
                         <viewControllerLayoutGuide type="bottom" id="THx-TM-zPq"/>
@@ -70,9 +70,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIV-ZD-PFd">
-                                <frame key="frameInset" minX="149" minY="263" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일형식으로 적기" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2K-B4-kri">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RXK-8g-TkB"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -82,9 +83,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2K-B4-kri">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeN-cz-vc1">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yY-9U-IdH">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RXK-8g-TkB"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZDd-Qh-rgf"/>
+                                </constraints>
+                                <state key="normal" title="계정 등록"/>
+                                <connections>
+                                    <action selector="actionJoin:" destination="uZX-Ac-Tds" eventType="touchUpInside" id="yc0-0Y-m5f"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIV-ZD-PFd">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0Y2-oF-yF7"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -93,13 +108,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zeN-cz-vc1" firstAttribute="top" secondItem="AAX-C7-noJ" secondAttribute="bottom" constant="29" id="2oB-9a-vnZ"/>
+                            <constraint firstAttribute="trailing" secondItem="pIV-ZD-PFd" secondAttribute="trailing" constant="10" id="DMe-3O-jHf"/>
+                            <constraint firstItem="zeN-cz-vc1" firstAttribute="leading" secondItem="AAX-C7-noJ" secondAttribute="leading" id="JKg-Yh-vcy"/>
+                            <constraint firstItem="5yY-9U-IdH" firstAttribute="leading" secondItem="H58-v8-5i8" secondAttribute="leading" constant="50" id="KpJ-BG-4Oz"/>
                             <constraint firstAttribute="trailing" secondItem="n2K-B4-kri" secondAttribute="trailing" constant="10" id="L53-TQ-S3l"/>
+                            <constraint firstItem="5yY-9U-IdH" firstAttribute="top" secondItem="pIV-ZD-PFd" secondAttribute="bottom" constant="40" id="Wpi-6I-8ZG"/>
+                            <constraint firstItem="pIV-ZD-PFd" firstAttribute="leading" secondItem="zeN-cz-vc1" secondAttribute="trailing" constant="10" id="Zjw-t3-zD7"/>
                             <constraint firstItem="AAX-C7-noJ" firstAttribute="leading" secondItem="H58-v8-5i8" secondAttribute="leading" constant="10" id="a0P-B1-YI4"/>
                             <constraint firstItem="n2K-B4-kri" firstAttribute="centerY" secondItem="AAX-C7-noJ" secondAttribute="centerY" id="dSS-nw-r7m"/>
-                            <constraint firstItem="AAX-C7-noJ" firstAttribute="top" secondItem="1GY-xJ-D96" secondAttribute="bottom" constant="10" id="p6G-XE-Oqt"/>
+                            <constraint firstItem="pIV-ZD-PFd" firstAttribute="centerY" secondItem="zeN-cz-vc1" secondAttribute="centerY" id="gzd-dq-4QN"/>
+                            <constraint firstItem="AAX-C7-noJ" firstAttribute="top" secondItem="1GY-xJ-D96" secondAttribute="bottom" constant="50" id="p6G-XE-Oqt"/>
                             <constraint firstItem="n2K-B4-kri" firstAttribute="leading" secondItem="AAX-C7-noJ" secondAttribute="trailing" constant="10" id="tCI-HO-LTo"/>
+                            <constraint firstAttribute="trailing" secondItem="5yY-9U-IdH" secondAttribute="trailing" constant="50" id="yb9-BC-Mva"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="n2K-B4-kri" id="Vjh-gy-pQa"/>
+                        <outlet property="pswdTextField" destination="pIV-ZD-PFd" id="Gwy-Ju-A58"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfq-0y-AUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

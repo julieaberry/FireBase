@@ -14,7 +14,6 @@ class UserListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,5 +22,9 @@ class UserListViewController: UIViewController {
     }
     
 
-
+    @IBAction func actionAddView(_ sender: AnyObject) {
+        
+        let addView = self.storyboard?.instantiateViewController(withIdentifier: "UserAddViewController")
+        self.navigationController?.pushViewController(addView!, animated: true)
+    }
 }
