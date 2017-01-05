@@ -38,7 +38,7 @@ class UserAddViewController: UIViewController {
                     let childUpdates = ["/Users/\(key)": post]
                     self.postRef.updateChildValues(childUpdates, withCompletionBlock: { (error, ref) in
                         print("User등록 성공")
-                        self.popSelf()
+                        self.performSegue(withIdentifier: "unwindToList", sender: self)
                     })
                 }
             })
@@ -47,9 +47,16 @@ class UserAddViewController: UIViewController {
         }
     }
     
+       // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        [self performSegueWithIdentifier:@"segue_Profile" sender:self];
+        
+//        self.performSegue(withIdentifier: "unwindToList", sender: self)
+        
+     }
+
     
-    func popSelf(){
-        self.navigationController?.popViewController(animated: true)
-    }
     
 }

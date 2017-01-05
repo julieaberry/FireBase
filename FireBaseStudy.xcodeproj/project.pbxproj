@@ -18,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1BBB1360D717D91396671478 /* Pods_FireBaseStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBaseStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B6F82D53B45A4E42A261EA /* Pods-FireBaseStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBaseStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireBaseStudy/Pods-FireBaseStudy.release.xcconfig"; sourceTree = "<group>"; };
 		6B22002A1E04E7CD006C591E /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		6B22002C1E04E7E3006C591E /* UserAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAddViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +129,7 @@
 				TargetAttributes = {
 					6B4BB89E1E04D9C5001746C9 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VH29LQ6AQ4;
+						DevelopmentTeam = KBPES976UU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -344,8 +343,9 @@
 			baseConfigurationReference = FD3978A576AC65895A1F6155 /* Pods-FireBaseStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VH29LQ6AQ4;
+				DEVELOPMENT_TEAM = KBPES976UU;
 				INFOPLIST_FILE = FireBaseStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Study.FireBaseStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,8 +358,9 @@
 			baseConfigurationReference = 24B6F82D53B45A4E42A261EA /* Pods-FireBaseStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VH29LQ6AQ4;
+				DEVELOPMENT_TEAM = KBPES976UU;
 				INFOPLIST_FILE = FireBaseStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Study.FireBaseStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
