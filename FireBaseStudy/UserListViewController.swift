@@ -13,24 +13,56 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var userTableView: UITableView!
     
+    var postRef : FIRDatabaseReference!
+    
+    var usersArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        postRef = FIRDatabase.database().reference()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
+        usersArray.removeAll()
         
+        self.loadData()
     }
 
+    func loadData(){
+        
+        postRef.child("Users").observeSingleEvent(of: .value, with: { (snapshot:FIRDataSnapshot ) in
+            
+            for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                let userId = snapshot.childSnapshot(forPath: rest.key).childSnapshot(forPath: "userId").value as! String
+                self.usersArray.append(userId)
+            }
+            
+            self.userTableView.reloadData()
+        })
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 20
+        return usersArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        cell.backgroundColor = UIColor.green
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+        
+        let userId = usersArray[indexPath.row]
+        cell.textLabel?.text = userId
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let addView = segue.destination as! UserAddViewController
+        
     }
     
     

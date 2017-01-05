@@ -22,23 +22,25 @@ class UserAddViewController: UIViewController {
     }
 
     @IBAction func actionJoin(_ sender: AnyObject) {
-     
+        
         if emailTextField.text?.characters.count != 0{
             FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: pswdTextField.text!, completion: { (user, error) in
                 
-                if let error = error{
+                if let error = error    {
                     
                     print("\(error.localizedDescription)")
+                    
                 }else{
-                    print("유저(이메일) 등록")
                     
                     let key = self.postRef.child("Users").childByAutoId().key
                     let post = ["userId": self.emailTextField.text!,
                                 "passWd": self.pswdTextField.text!]
                     let childUpdates = ["/Users/\(key)": post]
                     self.postRef.updateChildValues(childUpdates, withCompletionBlock: { (error, ref) in
-                        print("User등록 성공")
+                        
                         self.performSegue(withIdentifier: "unwindToList", sender: self)
+                        
+                        
                     })
                 }
             })
@@ -46,17 +48,4 @@ class UserAddViewController: UIViewController {
             print("이메일 작성필요")
         }
     }
-    
-       // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        [self performSegueWithIdentifier:@"segue_Profile" sender:self];
-        
-//        self.performSegue(withIdentifier: "unwindToList", sender: self)
-        
-     }
-
-    
-    
 }
