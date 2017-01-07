@@ -21,6 +21,11 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
 
         postRef = FIRDatabase.database().reference()
+        
+//        let token = FIRInstanceID.instanceID().token()!
+//
+//        print("TOKEN = ", token)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
