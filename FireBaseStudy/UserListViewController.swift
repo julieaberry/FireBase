@@ -42,6 +42,8 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
             
             self.userTableView.reloadData()
         })
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +64,10 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let addView = segue.destination as! UserAddViewController
+        
+//        addview setCallback{
+//            
+//        }
         
     }
     
