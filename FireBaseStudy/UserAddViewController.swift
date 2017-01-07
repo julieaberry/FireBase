@@ -29,15 +29,16 @@ class UserAddViewController: UIViewController {
                 if let error = error    {
                     
                     print("\(error.localizedDescription)")
-                    
                 }else{
+
                     
                     let key = self.postRef.child("Users").childByAutoId().key
                     let post = ["userId": self.emailTextField.text!,
                                 "passWd": self.pswdTextField.text!]
                     let childUpdates = ["/Users/\(key)": post]
                     self.postRef.updateChildValues(childUpdates, withCompletionBlock: { (error, ref) in
-                        
+
+//                        self.callback()
                         self.performSegue(withIdentifier: "unwindToList", sender: self)
                         
                         
