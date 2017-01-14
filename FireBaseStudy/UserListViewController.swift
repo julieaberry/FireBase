@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UserListViewController: UIViewController {
 
     @IBOutlet weak var userTableView: UITableView!
     
@@ -18,17 +18,15 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
     var usersArray = [String]()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         postRef = FIRDatabase.database().reference()
         
-//        let token = FIRInstanceID.instanceID().token()!
-//
-//        print("TOKEN = ", token)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(true)
         
         usersArray.removeAll()
@@ -51,8 +49,16 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @IBAction func prepareForUnWindList(segue:UIStoryboardSegue){
+        print("prepareForUnWindList")
+    }
+}
+
+extension UserListViewController : UITableViewDataSource {
+
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return usersArray.count
     }
     
@@ -65,21 +71,9 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return cell
     }
+
+}
+
+extension UserListViewController : UITableViewDelegate {
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let addView = segue.destination as! UserAddViewController
-        
-//        addview setCallback{
-//            
-//        }
-        
-    }
-    
-    
-    @IBAction func prepareForUnWindList(segue:UIStoryboardSegue){
-        print("prepareForUnWindList")
-        
-        
-    }
 }

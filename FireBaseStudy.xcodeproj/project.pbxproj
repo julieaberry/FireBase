@@ -14,7 +14,6 @@
 		6B4BB8AA1E04D9C6001746C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BB8A91E04D9C6001746C9 /* Assets.xcassets */; };
 		6B4BB8AD1E04D9C6001746C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BB8AB1E04D9C6001746C9 /* LaunchScreen.storyboard */; };
 		6BE9CADB1E04DC0E009629FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BE9CADA1E04DC0E009629FA /* GoogleService-Info.plist */; };
-		6BEFC2F51E1EAC8F00485D3D /* ddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEFC2F41E1EAC8F00485D3D /* ddViewController.swift */; };
 		83AB512ED3FC3E37980C5958 /* Pods_FireBaseStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99060E2192ECC94A38B6E82C /* Pods_FireBaseStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		6B4BB8AC1E04D9C6001746C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B4BB8AE1E04D9C6001746C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE9CADA1E04DC0E009629FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6BEFC2F41E1EAC8F00485D3D /* ddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ddViewController.swift; sourceTree = "<group>"; };
 		99060E2192ECC94A38B6E82C /* Pods_FireBaseStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBaseStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3978A576AC65895A1F6155 /* Pods-FireBaseStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBaseStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireBaseStudy/Pods-FireBaseStudy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,7 +68,6 @@
 				6B4BB8A21E04D9C6001746C9 /* AppDelegate.swift */,
 				6B22002A1E04E7CD006C591E /* UserListViewController.swift */,
 				6B22002C1E04E7E3006C591E /* UserAddViewController.swift */,
-				6BEFC2F41E1EAC8F00485D3D /* ddViewController.swift */,
 				6B4BB8A61E04D9C6001746C9 /* Main.storyboard */,
 				6B4BB8A91E04D9C6001746C9 /* Assets.xcassets */,
 				6B4BB8AB1E04D9C6001746C9 /* LaunchScreen.storyboard */,
@@ -127,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = KimSeongJoon;
 				TargetAttributes = {
 					6B4BB89E1E04D9C5001746C9 = {
@@ -222,7 +219,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BEFC2F51E1EAC8F00485D3D /* ddViewController.swift in Sources */,
 				6B22002D1E04E7E3006C591E /* UserAddViewController.swift in Sources */,
 				6B4BB8A31E04D9C6001746C9 /* AppDelegate.swift in Sources */,
 				6B22002B1E04E7CD006C591E /* UserListViewController.swift in Sources */,
@@ -269,6 +265,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -318,6 +315,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
